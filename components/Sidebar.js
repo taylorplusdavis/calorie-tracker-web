@@ -2,26 +2,12 @@ import {
   BellIcon,
   HeartIcon,
   HomeIcon,
-  UserCircleIcon,
   ViewGridIcon,
 } from "@heroicons/react/solid";
 import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
 
-function Navbar() {
+function Sidebar() {
   const [button, setButton] = useState("home");
-
-  const navText = {
-    hidden: {
-      opacity: 0,
-    },
-    show: {
-      opacity: 1,
-    },
-    exit: {
-      opacity: 0,
-    },
-  };
 
   return (
     <div className=" flex flex-col w-24 bg-slate-700 h-screen items-center justify-around">
@@ -70,4 +56,4 @@ function Navbar() {
   );
 }
 
-export default Navbar;
+export default Sidebar;
