@@ -11,33 +11,25 @@ function Sidebar() {
   const [button, setButton] = useState("home");
 
   return (
-    <div className="flex flex-col w-24 bg-slate-700 h-screen items-center">
+    <div className=" flex flex-col w-24 bg-slate-700 h-screen items-center justify-around">
       {/* Home button */}
-      <div className="homeButtonContainer w-full h-1/3 flex flex-col">
+      <div className="homeButtonContainer w-full flex flex-col items-center">
         <HomeIcon
           onClick={() => setButton("home")}
-          className="text-slate-100 p-8 glow cursor-pointer mb-20"
+          className="text-slate-100 p-8 glow cursor-pointer"
         />
-
-        <div className="buttonContainer -rotate-90 bg-slate-600 text-center p-2 cursor-default rounded-full w-[12rem] self-center">
-          <AnimatePresence exitBeforeEnter>
-            <motion.p
-              initial={{ opacity: 0, x: -50 }}
-              animate={{ opacity: 1, x: 0 }}
-              exit={{ opacity: 0, x: 50 }}
-              className="text-slate-100 text-lg font-extrabold rounded-full whitespace-nowrap"
-            >
-              {button === "home" && "Home"}
-              {button === "notifications" && "Notifications"}
-              {button === "health" && "Calorie Tracking"}
-              {button === "messages" && "Messages"}
-            </motion.p>
-          </AnimatePresence>
+        <div className="hidden md:inline-flex buttonContainer cursor-default rounded-full my-12">
+          <p className="text-slate-100 text-lg font-extrabold -rotate-90 bg-slate-600 py-2 px-5 rounded-full whitespace-nowrap">
+            {button === "home" && "Home"}
+            {button === "notifications" && "Notifications"}
+            {button === "health" && "Calorie Tracking"}
+            {button === "messages" && "Messages"}
+          </p>
         </div>
       </div>
 
       {/* Rest of buttons */}
-      <div className="buttonsContainer flex flex-col space-y-28 w-full items-center">
+      <div className="buttonsContainer flex flex-col justify-between w-full items-center">
         <div
           className="buttonContainer w-full cursor-pointer -rotate-90 relative glow-parent"
           onClick={() => setButton("notifications")}
@@ -60,6 +52,7 @@ function Sidebar() {
           <ViewGridIcon className="text-slate-600 p-8 glow-child" />
         </div>
       </div>
+      <br />
     </div>
   );
 }
