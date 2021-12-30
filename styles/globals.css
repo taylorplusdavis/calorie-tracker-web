@@ -1,3 +1,19 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+* {
+  font-family: "Quicksand", sans-serif;
+}
+
+@layer utilities {
+  .glow:hover {
+    filter: drop-shadow(0 0 4px rgba(255, 255, 255, 0.5));
+  }
+  .glow-child {
+    @apply hover:text-white transition-all ease-out duration-100;
+  }
+  .glow-parent {
+    @apply glow transition-all ease-out duration-100;
+  }
+}
